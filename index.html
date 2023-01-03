@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Liens du Jquerry-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Lien du bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="ND">
+    <!-- Lien du CSS-->
+    <link rel="stylesheet" href="./asset/style.css">
+
+    <title>Evaluation HTML-JS</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <main>
+            <!-- Partie Header-->
+            
+    <header>
+
+        <button class="btnMenu" id="menu"><img src="./img/menu.svg" alt="Menu" class="menuImg"></button>
+        <nav class="navbar hide"><!--Début de la Navbar-->
+            <a href="#" class="navLink">Louer une voiture</a>
+            <a href="#" class="navLink">Louer un utilitaire</a>
+            <a href="#" class="navLink">Réserver un chauffeur</a>
+            <a href="#" class="navLink">Découvrez nos agences</a>
+            <a href="#" class="navLink">Mon Compte</a>
+            <a href="#" class="navLink">Contact</a>
+        </nav><!--Fin de la Navbar-->
+
+        <div class="headerText">
+            <h1 class="headerTitle">Bienvenue à bord</h1>
+            <p class="headerSubtitle">Location de voiture 24h/24 et 7j/7</p>
+        </div>
+        
+            <form method="POST">
+                <div class="formInputs">
+                    <select name="address" id="address">
+                        <option value="Adresse de départ">Adresse de départ</option>
+                        
+                    </select>
+                    <input type="date" name="startDate" id="startDate">
+                    <input type="date" name="endDate" id="endDate">
+                </div>
+                <div class="formBtn">
+                    <input type="submit" value="Valider ma recherche" id="submitBtn">
+                </div>
+            </form>     
+    </header>
+            <!-- Fin du header-->
+        </main>
+    </div>
+    <main>
+
+        <!-- Choix du classement de la plage. (exemple: par ordre croissant etc..)-->
+        <div class="row justify-content-center mt-4">
+            <div class="row col-md-8 justify-content-between">
+
+                <div class="col-3" id="results"> <span class="font-weight-bold">7</span> résultats</div>
+
+                <div class="col-4 col-sm-3" id="filters">
+                    <select id="cars">
+                        <option value="1">Prix croissants</option>
+                        <option value="2">Prix décroissants</option>
+                        <option value="3">Meilleurs classement</option>
+                        <option value="4">Faible kilométrage</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div id="voitures" class="row flex-column col-12 col-md-8 mx-auto justify-content-center">
+
+            <div class="row border-bottom p-4">
+                <div class="col-6 col-sm-6">
+                    <div id="carousel1" class="carousel slide" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner monCarousel">
+                            <p id="p208g"><img src="./img/fleche.png" alt="" class="flecheGauche"></p>
+                            <div id="p208" class="carousel-item active">
+                                <img class="w-100" src="./img/vehicule1.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule2.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule3.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule4.png" alt="First slide">
+                            </div>
+                            <p id="p208d"><img src="./img/fleche.png" alt=""></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 d-flex flex-column justify-content-center">
+                    <h3 class="d-none d-md-block">Peugeot 208</h3>
+                    <p class="d-none d-md-block">Diesel 5 portes, GPS, AutoRadio, Forfait 1000km (0,5/km supplémentaire)
+                    </p>
+                    <p class="d-none d-md-block">999$</p>
+                    <button class="reservationBtn">Réserver et payer</button>
+                </div>
+            </div>
+
+            <div class="row border-bottom p-4">
+                <div class="col-6 col-sm-6">
+
+                    <div id="carousel2" class="carousel slide" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner monCarousel">
+                            <p id="ffg"><img src="./img/fleche.png" alt="" class="flecheGauche"></p>
+                            <div id="ff" class="carousel-item active">
+                                <img class=" w-100" src="./img/vehicule2.png" alt="First slide">
+                                <img class=" w-100 cacher" src="./img/vehicule3.png" alt="First slide">
+                                <img class=" w-100 cacher" src="./img/vehicule4.png" alt="First slide">
+                                <img class=" w-100 cacher" src="./img/vehicule1.png" alt="First slide">
+                            </div>
+                            <p id="ffd"><img src="./img/fleche.png" alt=""></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 col-sm-6 d-flex flex-column justify-content-center">
+                    <h3 class="d-none d-md-block">Ford Focus</h3>
+                    <p class="d-none d-md-block">Diesel 5 portes, GPS, AutoRadio, Forfait 1000km (0,5/km supplémentaire)
+                    </p>
+                    <p class="d-none d-md-block">999$ </p>
+                    <button class="reservationBtn">Réserver et payer</button>
+                </div>
+            </div>
+
+            <div class="row border-bottom p-4">
+                <div class="col-6 col-sm-6">
+
+                    <div id="carousel3" class="carousel slide" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner monCarousel">
+                            <p id="audi1g"><img src="./img/fleche.png" alt="" class="flecheGauche"></p>
+                            <div id="audi1" class="carousel-item active">
+                                <img class="w-100" src="./img/vehicule3.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule4.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule1.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule2.png" alt="First slide">
+                            </div>
+                            <p id="audi1d"><img src="./img/fleche.png" alt=""></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 col-sm-6 d-flex flex-column justify-content-center">
+                    <h3 class="d-none d-md-block">Audi A1</h3>
+                    <p class="d-none d-md-block">Diesel 5 portes, GPS, AutoRadio, Forfait 1000km (0,5/km supplémentaire)
+                    </p>
+                    <p class="d-none d-md-block">1100$</p>
+                    <button class="reservationBtn">Réserver et payer</button>
+                </div>
+            </div>
+
+            <div class="row border-bottom p-4">
+                <div class="col-6 col-sm-6">
+
+                    <div id="carousel3" class="carousel slide" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner monCarousel">
+                            <p id="opel1g"><img src="./img/fleche.png" alt="" class="flecheGauche"></p>
+                            <div id="opel1" class="carousel-item active">
+                                <img class="w-100" src="./img/vehicule4.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule1.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule2.png" alt="First slide">
+                                <img class="w-100 cacher" src="./img/vehicule3.png" alt="First slide">
+                            </div>
+                            <p id="opel1d"><img src="./img/fleche.png" alt=""></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 col-sm-6 d-flex flex-column justify-content-center">
+                    <h3 class="d-none d-md-block">Opel Mokka</h3>
+                    <p class="d-none d-md-block">Diesel 5 portes, GPS, AutoRadio, Forfait 1000km (0,5/km supplémentaire)
+                    </p>
+                    <p class="d-none d-md-block">1150$</p>
+                    <button class="reservationBtn">Réserver et payer</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Footer-->
+    <footer class="mt-4">
+        <div class="row col-md-10 mx-auto justify-content-center">
+            <div id="agency" class="col-4 col-sm-2"></div>
+            <div id="agency-info" class="d-flex col-4 col-sm-3">
+                <ul class="d-flex flex-column justify-content-between">
+                    <li>Notre agence de <span class="font-weight-bold">Paris</span></li>
+                    <li>300 Boulevard de Vaugirard, 75015 Paris</li>
+                    <li>Ouvert 7j/7 de 09h à 13h et de 14h à 20h</li>
+                    <li>01 49 78 21 33</li>
+                    <li>contact@vtc.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--Lien JS-->
+    <script src="./asset/script.js"></script>
+</body>
+
+</html>
